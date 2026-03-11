@@ -8,9 +8,9 @@ const services = [
       "High-performance business websites and dashboards built with scalability and clean architecture in mind.",
   },
   {
-    title: "Bug Fixing & Optimization",
+    title: "Customized LLM API Development",
     description:
-      "Production bug fixes, performance tuning, and codebase refactoring for faster and more stable systems.",
+      "Personalised and privacy focused LLM API development for unique business needs, with a focus on data security and performance.",
   },
   {
     title: "MVP & App Development",
