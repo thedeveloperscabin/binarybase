@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import SectionWrapper from "./SectionWrapper";
 import GlowCard from "./GlowCard";
 import { AnimatedLine } from "./AnimatedText";
@@ -14,6 +15,7 @@ const services = [
       </svg>
     ),
     gradient: "from-blue-500 to-cyan-500",
+    link: "/services/web-development",
   },
   {
     title: "Customized LLM API Development",
@@ -25,6 +27,7 @@ const services = [
       </svg>
     ),
     gradient: "from-purple-500 to-pink-500",
+    link: "/services/llm-development",
   },
   {
     title: "MVP & App Development",
@@ -36,6 +39,7 @@ const services = [
       </svg>
     ),
     gradient: "from-amber-500 to-orange-500",
+    link: "/services/mvp-development",
   },
   {
     title: "API & Platform Integration",
@@ -47,6 +51,7 @@ const services = [
       </svg>
     ),
     gradient: "from-green-500 to-emerald-500",
+    link: "/services/api-integration",
   },
 ];
 
@@ -66,7 +71,7 @@ export default function Services() {
         <div className="max-w-6xl mx-auto w-full relative z-10">
           {/* Section header */}
           <div className="text-center mb-16">
-            
+
 
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
@@ -103,35 +108,37 @@ export default function Services() {
                 transition={{ delay: index * 0.15, duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <GlowCard className="h-full">
-                  <div className="p-8 lg:p-10 h-full glass-card rounded-2xl group">
-                    {/* Icon */}
-                    <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.gradient} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      {service.icon}
+                <Link to={service.link} className="block h-full">
+                  <GlowCard className="h-full">
+                    <div className="p-8 lg:p-10 h-full glass-card rounded-2xl group cursor-pointer">
+                      {/* Icon */}
+                      <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.gradient} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        {service.icon}
+                      </div>
+
+                      {/* Content */}
+                      <h3 className="text-xl lg:text-2xl font-semibold text-black dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                        {service.title}
+                      </h3>
+
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      {/* Hover arrow */}
+                      <motion.div
+                        className="mt-6 flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity"
+                        initial={{ x: -10 }}
+                        whileHover={{ x: 0 }}
+                      >
+                        <span>Learn more</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </motion.div>
                     </div>
-
-                    {/* Content */}
-                    <h3 className="text-xl lg:text-2xl font-semibold text-black dark:text-white mb-4 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                      {service.title}
-                    </h3>
-
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {service.description}
-                    </p>
-
-                    {/* Hover arrow */}
-                    <motion.div
-                      className="mt-6 flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium opacity-0 group-hover:opacity-100 transition-opacity"
-                      initial={{ x: -10 }}
-                      whileHover={{ x: 0 }}
-                    >
-                      <span>Learn more</span>
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </motion.div>
-                  </div>
-                </GlowCard>
+                  </GlowCard>
+                </Link>
               </motion.div>
             ))}
           </div>

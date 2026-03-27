@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const socialLinks = [
   {
@@ -46,7 +47,7 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-center md:text-left"
           >
-            <a href="#" className="flex items-center gap-2 justify-center md:justify-start group">
+            <Link to="/" className="flex items-center gap-2 justify-center md:justify-start group">
               <motion.img
                 src="/favicon.svg"
                 alt="BinaryBase Logo"
@@ -58,7 +59,7 @@ export default function Footer() {
                 <span className="text-black dark:text-white">Binary</span>
                 <span className="gradient-text ml-1">Base</span>
               </span>
-            </a>
+            </Link>
             <p className="mt-2 text-sm text-gray-500 dark:text-gray-500">
               Building digital solutions with precision
             </p>

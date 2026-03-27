@@ -176,9 +176,9 @@ export default function Hero() {
       {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        style={{
+          opacity: useTransform(scrollYProgress, [0, 0.05], [1, 0]),
+        }}
       >
         <motion.div
           className="flex flex-col items-center gap-2 cursor-pointer"

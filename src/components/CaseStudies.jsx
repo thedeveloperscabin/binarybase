@@ -5,7 +5,7 @@ import { AnimatedLine } from "./AnimatedText";
 
 const projects = [
   {
-    title: "AI-Based Video and Audio Verification System",
+    title: "AI-Based Video and Audio Deepfake Detection System",
     problem:
       "Organizations needed a reliable way to identify manipulated or AI-generated audio and video content.",
     solution:
